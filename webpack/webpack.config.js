@@ -41,10 +41,10 @@ module.exports = (_, { mode }) => ({
           },
           {
             loader: 'css-loader'
-          }/*,
+          },
           {
             loader: 'sass-loader'
-          }*/
+          }
         ]
       },
       {
