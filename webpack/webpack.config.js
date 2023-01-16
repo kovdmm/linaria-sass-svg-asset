@@ -34,27 +34,17 @@ module.exports = (_, { mode }) => ({
         }
       },
       {
-        test: /\.(scss|css)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.?styled\.tsx?$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: '@linaria/webpack5-loader'
-          }
-        ]
+        use: ['@linaria/webpack5-loader']
+      },
+      {
+        test: /\.(scss|sass)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
   }
